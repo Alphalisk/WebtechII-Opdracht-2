@@ -22,7 +22,8 @@ if (!(empty($_GET))) {
 if (isset($file)) {
     $transactions= [];
     $transactions[] = getTransactions($file);
-    
+    $totals = calculateTotals($transactions);
+
     require VIEWS_PATH . 'transactions.php';
 }
 

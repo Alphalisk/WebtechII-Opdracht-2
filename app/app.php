@@ -35,7 +35,7 @@ function extractTransaction(array $transactionRow): array
 {
     [$date, $checkNumber, $description, $amount] = $transactionRow;
 
-    $amount = (float) $amount;
+    $amount = (float) str_replace(['$', ','], '', $amount);
 
     return [
         'date'        => $date,
@@ -44,5 +44,27 @@ function extractTransaction(array $transactionRow): array
         'amount'      => $amount,
     ];
 }
+
+function calculateTotals(array $transactions): array
+{
+    $totals = ['netTotal' => 0, 'totalIncome' => 0, 'totalExpense' => 0];
+    if (!empty($transactions)):
+        foreach ($transactions as $transaction) :
+            foreach ($transaction as $transaction1) :
+                $transaction2 = extractTransaction($transaction1);
+                $totals['netTotal'] += $transaction2['amount'];
+                
+                if ($transaction2['amount'] >= 0) {
+                    $totals['totalIncome'] += $transaction2['amount'];
+                } else {
+                    $totals['totalExpense'] += $transaction2['amount'];
+                }
+            endforeach;
+        endforeach;
+    endif;
+
+    return $totals;
+}
+
 
 

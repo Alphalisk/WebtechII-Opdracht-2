@@ -60,15 +60,15 @@
             <tfoot>
                 <tr>
                     <th colspan="3">Totale Inkomsten:</th>
-                    <td><!-- HIER CODE --></td>
+                    <td><!-- HIER CODE --><?= $totals['totalIncome'] ?></td>
                 </tr>
                 <tr>
                     <th colspan="3">Totale Uitgaven:</th>
-                    <td><!-- HIER CODE --></td>
+                    <td><!-- HIER CODE --><?= $totals['totalExpense'] ?></td>
                 </tr>
                 <tr>
                     <th colspan="3">Netto totaal:</th>
-                    <td><!-- HIER CODE --></td>
+                    <td><!-- HIER CODE --><?= $totals['netTotal'] ?></td>
                 </tr>
             </tfoot>
         </table>

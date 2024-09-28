@@ -13,14 +13,15 @@ define('VIEWS_PATH', $root . 'opdracht 2' . DIRECTORY_SEPARATOR . 'views' . DIRE
 require APP_PATH . 'app.php';
 $files = getTransactionFiles(FILES_PATH);
 
-$transactions= [];
-foreach ($files as $file){
-    print_r($transactions);
-    $transactions[] = getTransactions($file);
-    print("<br>");
+require VIEWS_PATH . 'homepage.php';
+
+if (!(empty($_GET))) {
+    $file = $_GET['bestand'];
 }
-print_r($transactions);
 
-require VIEWS_PATH . 'transactions.php';
-
+if (isset($file)) {
+    $transactions= [];
+    $transactions[] = getTransactions($file);
+    require VIEWS_PATH . 'transactions.php';
+}
 

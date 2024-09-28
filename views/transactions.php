@@ -2,6 +2,14 @@
 <html>
     <head>
         <title>Transacties</title>
+        
+        <!-- Mobile first, proper rendering and touch controls -->
+        <meta name="viewport" content="width=device-width, initial-scale=1"> 
+
+        <!-- Externe link naar Bootstrap Versie 5 -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
         <style>
             table {
                 width: 100%;
@@ -35,7 +43,7 @@
             </thead>
             <tbody>
                 <!-- HIER CODE -->
-                <?php if (! empty($transactions)): ?>
+                <?php if (!empty($transactions)): ?>
                     <?php foreach($transactions as $transaction): ?>
                         <?php foreach($transaction as $transaction1): ?>
                             <tr> 

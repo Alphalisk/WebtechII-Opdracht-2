@@ -31,3 +31,18 @@ function getTransactions(string $fileName) :array
     return $transactions;
 }
 
+function extractTransaction(array $transactionRow): array
+{
+    [$date, $checkNumber, $description, $amount] = $transactionRow;
+
+    $amount = (float) $amount;
+
+    return [
+        'date'        => $date,
+        'checkNumber' => $checkNumber,
+        'description' => $description,
+        'amount'      => $amount,
+    ];
+}
+
+

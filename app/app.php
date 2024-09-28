@@ -22,7 +22,7 @@ function getTransactions(string $fileName) :array
         trigger_error('File "' . $fileName . '" does not exist.', E_USER_ERROR);
     }
     $file = fopen($fileName, 'r');
-
+    fgetcsv($file);
     $transactions = [];
 
     while (($transaction = fgetcsv($file)) !== false) {

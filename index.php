@@ -19,5 +19,6 @@ foreach ($files as $file){
 }
 print_r($transactions);
 
+require VIEWS_PATH . 'transactions.php';
 
 

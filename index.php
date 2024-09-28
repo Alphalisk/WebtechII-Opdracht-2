@@ -22,6 +22,7 @@ if (!(empty($_GET))) {
 if (isset($file)) {
     $transactions= [];
     $transactions[] = getTransactions($file);
+    
     require VIEWS_PATH . 'transactions.php';
 }
 

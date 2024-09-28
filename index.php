@@ -15,7 +15,9 @@ $files = getTransactionFiles(FILES_PATH);
 
 $transactions= [];
 foreach ($files as $file){
-    $transactions[] = array_merge($transactions, getTransactions($file));
+    print_r($transactions);
+    $transactions[] = getTransactions($file);
+    print("<br>");
 }
 print_r($transactions);
 

@@ -3,15 +3,15 @@
 declare(strict_types = 1);
 
 // HIER CODE
-function getTransactionFiles() : array{
+function getTransactionFiles(string $dirPath): array{
 
     $files = [];
 
-    foreach (scandir(FILES_PATH) as $file){
+    foreach (scandir($dirPath) as $file){
         if (is_dir($file)) {
             continue;
         }
-        $files[] = $file;
+        $files[] = $dirPath . $file;
     }
     return $files;
 }

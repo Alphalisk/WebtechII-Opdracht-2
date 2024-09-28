@@ -11,7 +11,6 @@ define('VIEWS_PATH', $root . 'opdracht 2' . DIRECTORY_SEPARATOR . 'views' . DIRE
 
 /* HIER CODE (zie de instructies op Blackboard) */
 require APP_PATH . 'app.php';
-getTransactionFiles();
-$files = getTransactionFiles();
+$files = getTransactionFiles(FILES_PATH);
 var_dump($files);
 

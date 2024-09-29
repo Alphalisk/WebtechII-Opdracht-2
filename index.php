@@ -11,6 +11,8 @@ define('VIEWS_PATH', $root . 'opdracht 2' . DIRECTORY_SEPARATOR . 'views' . DIRE
 
 /* HIER CODE (zie de instructies op Blackboard) */
 require APP_PATH . 'app.php';
+require APP_PATH . 'helpers.php';
+
 $files = getTransactionFiles(FILES_PATH);
 
 require VIEWS_PATH . 'homepage.php';

@@ -8,7 +8,7 @@ function formatEuroAmount(float $amount): string {
      * Deze waarde wordt gereturned als string.
      */
     $isNegative = $amount < 0;
-    return ($isNegative ? '-' : '') . '€' . number_format(abs($amount), 2);
+    return ($isNegative ? '-' : '') . '€' . number_format(abs($amount), 2, ',', '.');
 }
 
 function formatDate(string $date): string {

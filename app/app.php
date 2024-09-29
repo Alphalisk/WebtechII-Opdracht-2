@@ -45,7 +45,7 @@ function extractTransaction(array $transactionRow): array {
      */ 
     [$date, $checkNumber, $description, $amount] = $transactionRow;
 
-    $amount = (float) str_replace(['$', ','], '', $amount);
+    $amount = (float) str_replace(',', '.', $amount);
 
     return [
         'date'        => $date,

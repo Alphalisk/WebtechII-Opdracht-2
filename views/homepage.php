@@ -34,7 +34,6 @@
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 
-        <title>Home</title>
     </head>
     <body>
 
@@ -59,7 +58,12 @@
             <div class="row">
                 <div class="col">
                     <div class="container">
-                        <h1>Transacties</h1>
+                        <h1>Transactietabel</h1>
+                        <p>
+                            Deze site gebruikt bestanden uit de map <i><?php echo FILES_PATH;?></i> om een tabel te genereren.<br>
+                            De bestanden zijn hieronder weergeven in een lijst met links.<br>
+                            Kies een bestand uit om de transactietabel te genereren.<br>
+                        </p>
                         <ul>
                             <?php 
                                 foreach($files as $bestand) {

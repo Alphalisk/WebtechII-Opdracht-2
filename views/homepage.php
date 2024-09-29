@@ -6,6 +6,7 @@
         <!-- Mobile first, proper rendering and touch controls -->
         <meta name="viewport" content="width=device-width, initial-scale=1"> 
 
+        <!-- Vaste stijlen voor op de gehele site -->
         <style>
             table {
                 width: 100%;
@@ -65,7 +66,8 @@
                             Kies een bestand uit om de transactietabel te genereren.<br>
                         </p>
                         <ul>
-                            <?php 
+                            <!-- Hier wordt een lijst met een link naar alle bestanden in de map 'transaction_files' gegenereerd -->
+                            <?php
                                 foreach($files as $bestand) {
                                     echo "<li><a href=\"index.php?bestand=$bestand\">$bestand</a></li>";
                                 }

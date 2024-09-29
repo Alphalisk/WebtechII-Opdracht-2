@@ -1,36 +1,4 @@
-<!DOCTYPE html>
-<html>
-    <head>
-        <title>Transacties</title>
-        
-        <!-- Mobile first, proper rendering and touch controls -->
-        <meta name="viewport" content="width=device-width, initial-scale=1"> 
-
-        <!-- Externe link naar Bootstrap Versie 5 -->
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-
-        <style>
-            table {
-                width: 100%;
-                border-collapse: collapse;
-                text-align: center;
-            }
-
-            table tr th, table tr td {
-                padding: 5px;
-                border: 1px #eee solid;
-            }
-
-            tfoot tr th, tfoot tr td {
-                font-size: 20px;
-            }
-
-            tfoot tr th {
-                text-align: right;
-            }
-        </style>
-    </head>
+<!-- De code voorafgaand is in de view homepage.php gekopieerd. Dit zodat maar 1 bestand bepaald wat de layout van het document is.-->
     <body>
         <table>
             <thead>
@@ -42,7 +10,17 @@
                 </tr>
             </thead>
             <tbody>
-                <!-- HIER CODE -->
+                <!-- 
+                        Hier volgt een dubbele for-loop die elk element binnen een gekozen multidimensionale array nagaat en plot in een tabel.
+                        Daarbij maakt het gebruik van de volgende functies komend uit app.php en helpers.php:
+                            extractTransaction: Deze functie maakt van een gegeven rij uit een array een associatieve array met de keys; 
+                                                date, checkNumber, description en amount en de bijhorende waarden. 
+                            formatDate:         Deze functie format een gegeven datum naar het formaat <dag maand jaar> waarbij maand is uitgeschreven.
+                            formatEuroAmount:   Deze functie voegt bij een gegeven float een euro teken toe.
+
+                        Tot slot wordt bij de key 'amount' gecontroleerd of het een negatieve, positive of nulwaarde bevat. 
+                        De output tekst wordt groen bij positief, rood bij negatief en ongewijzigd bij nul.
+                 -->
                 <?php if (!empty($transactions)): ?>
                     <?php foreach($transactions as $transaction): ?>
                         <?php foreach($transaction as $transaction1): ?>
@@ -72,15 +50,24 @@
             <tfoot>
                 <tr>
                     <th colspan="3">Totale Inkomsten:</th>
-                    <td><!-- HIER CODE --><?= formatEuroAmount($totals['totalIncome']) ?></td>
+                    <td>
+                        <!-- De array $totals is eerder aangemaakt en bevat de som van alle inkomsten in de key 'totalIncome' -->
+                        <?= formatEuroAmount($totals['totalIncome']) ?>
+                    </td>
                 </tr>
                 <tr>
                     <th colspan="3">Totale Uitgaven:</th>
-                    <td><!-- HIER CODE --><?= formatEuroAmount($totals['totalExpense']) ?></td>
+                    <td>
+                        <!-- De array $totals is eerder aangemaakt en bevat de som van alle uitgaven in de key 'totalExpense' -->
+                        <?= formatEuroAmount($totals['totalExpense']) ?>
+                    </td>
                 </tr>
                 <tr>
                     <th colspan="3">Netto totaal:</th>
-                    <td><!-- HIER CODE --><?= formatEuroAmount($totals['netTotal']) ?></td>
+                    <td>
+                        <!-- De array $totals is eerder aangemaakt en bevat de netto som van het geheel in de key 'netTotal' -->
+                         <?= formatEuroAmount($totals['netTotal']) ?>
+                    </td>
                 </tr>
             </tfoot>
         </table>

@@ -48,7 +48,7 @@
                         <?php foreach($transaction as $transaction1): ?>
                             <?php $transaction2 = extractTransaction($transaction1)?>
                             <tr>
-                                <td><?= ($transaction2['date']) ?></td>
+                                <td><?= formatDate(($transaction2['date'])) ?></td>
                                 <td><?= ($transaction2['checkNumber']) ?></td>
                                 <td><?= ($transaction2['description']) ?></td>
                                 <td><?= ($transaction2['amount']) ?></td>

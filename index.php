@@ -3,13 +3,14 @@
 // Hiermee wordt afgedwongen dat datatypes gelijk moeten blijven.
 declare(strict_types = 1);
 
-$root = dirname(__DIR__) . DIRECTORY_SEPARATOR;
+//__DIR__ gewijzigd naar __FILE__ omdat __DIR__ verwijst naar de parent directory en niet de current directory wat __FILE__ wel doet.
+$root = dirname(__FILE__) . DIRECTORY_SEPARATOR;
 
 // Hier worden constanten gemaakt die de path bevatten van de directory waar alle webpagina attributen zich bevinden.
 // 'Opdracht 2' is als map toegevoegd omdat deze laatste map niet automatisch meegenomen wordt.
-define('APP_PATH', $root . 'opdracht 2' . DIRECTORY_SEPARATOR . 'app' . DIRECTORY_SEPARATOR);
-define('FILES_PATH', $root . 'opdracht 2' . DIRECTORY_SEPARATOR . 'transaction_files' . DIRECTORY_SEPARATOR);
-define('VIEWS_PATH', $root . 'opdracht 2' . DIRECTORY_SEPARATOR . 'views' . DIRECTORY_SEPARATOR);
+define('APP_PATH', $root . 'app' . DIRECTORY_SEPARATOR);
+define('FILES_PATH', $root . 'transaction_files' . DIRECTORY_SEPARATOR);
+define('VIEWS_PATH', $root . 'views' . DIRECTORY_SEPARATOR);
 
 
 // Hier wordt app.php en helpers.php ingeladen.

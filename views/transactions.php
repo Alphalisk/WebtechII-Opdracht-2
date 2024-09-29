@@ -51,7 +51,19 @@
                                 <td><?= formatDate(($transaction2['date'])) ?></td>
                                 <td><?= ($transaction2['checkNumber']) ?></td>
                                 <td><?= ($transaction2['description']) ?></td>
-                                <td><?= ($transaction2['amount']) ?></td>
+                                <td>
+                                    <?php if ($transaction2['amount'] < 0): ?>
+                                        <span style="color: red;">
+                                            <?= formatEuroAmount($transaction2['amount']) ?>
+                                        </span>
+                                    <?php elseif ($transaction2['amount'] > 0): ?>
+                                        <span style="color: green;">
+                                            <?= formatEuroAmount($transaction2['amount']) ?>
+                                        </span>
+                                    <?php else: ?>
+                                        <?= formatEuroAmount($transaction2['amount']) ?>
+                                    <?php endif ?>
+                                </td>
                             </tr>
                         <?php endforeach ?>
                     <?php endforeach ?>
